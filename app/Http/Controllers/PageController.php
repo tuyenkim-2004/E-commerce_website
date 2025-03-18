@@ -24,7 +24,7 @@ class PageController extends Controller
         $sp_theoloai = Product::where('id_type', $type)->get();
         $type_product = ProductType::all();
         $sp_khac = Product::where('id_type', '<>', $type)->paginate(3);
-        return view('pages.product_type', compact('sp_theoloai', 'type_product', 'sp_khac'));
+        return view('page.loai_sanpham', compact('sp_theoloai', 'type_product', 'sp_khac'));
     }
 
     public function productDetail($id)
@@ -53,5 +53,14 @@ class PageController extends Controller
         return view('components.header', compact('categories')); // Truyền biến 
     }
 
+
+    public function showContact()
+    {
+        return view('page.lienhe');
+    }
+    public function showAbout()
+    {
+        return view('page.about');
+    }
     
 }

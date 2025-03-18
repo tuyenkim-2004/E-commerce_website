@@ -18,8 +18,11 @@ use App\Http\Controllers\ProductController;
 */
 
 Route::get('/', [PageController::class, 'getIndex']);
-
+Route::get('/type/{id}', [PageController::class, 'getLoaiSp']);
+Route::get('/contact', [PageController::class, 'showContact']);
+Route::get('/aboutus', [PageController::class, 'showAbout']);
 Route::get('/add_to_cart', [PageController::class, 'addCart'])->name('themgiohang');
+
 Route::get('/detail/{id}', [PageController::class, 'productDetail'])->name('page.detail');
 Route::get('/admin/products', [AdminController::class, 'showProducts'])->name('pageadmin.admin');
 Route::get('/export', [ExportController::class, 'export'])->name('export');
